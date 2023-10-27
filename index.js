@@ -22,9 +22,8 @@ async function main (){
 
 //  await mongoose.connect('mongodb+srv://ujwalkumar1:Ujwal12@cluster0.fd65aqc.mongodb.net/ecommerceDatabase')
 //  console.log("Database connected");
-let link = process.env.MONGODB_URI
- await mongoose.connect(link)
- console.log("Database connected",`${process.env.MONGODB_URI}`);
+ await mongoose.connect("mongodb+srv://vercel-admin-user:Ujwal12@cluster0.fd65aqc.mongodb.net/ecommerceDatabase?retryWrites=true&w=majority")
+ console.log("Database connected");
 //  console.log("process.env.MONGO_URL" ,process.env.MONGO_URL);
 
 //  mongodb+srv://<username>:<password>@cluster0.fd65aqc.mongodb.net/?retryWrites=true&w=majority
