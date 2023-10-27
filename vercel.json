@@ -21,7 +21,7 @@
         },
         {
             "src": "/",
-            "dest": "build/index.js"
+            "dest": "build/index.html"
         },
         {
             "src": "/(.+)",
