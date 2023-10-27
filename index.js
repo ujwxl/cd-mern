@@ -33,7 +33,7 @@ async function main (){
 
 server.use(cors());
 server.use(morgan("dev"))
-server.use(express.static('build'));
+server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
 server.use('/products' , productRouter.router)
 server.use('/user' , usersRouter.router)
 server.use("*" , (req, res) => {
