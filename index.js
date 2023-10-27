@@ -23,7 +23,7 @@ async function main (){
 //  await mongoose.connect('mongodb+srv://ujwalkumar1:Ujwal12@cluster0.fd65aqc.mongodb.net/ecommerceDatabase')
 //  console.log("Database connected");
  await mongoose.connect(`${process.env.MONGODB_URI}`)
- console.log("Database connected");
+ console.log("Database connected",`${process.env.MONGODB_URI}`);
 //  console.log("process.env.MONGO_URL" ,process.env.MONGO_URL);
 
 //  mongodb+srv://<username>:<password>@cluster0.fd65aqc.mongodb.net/?retryWrites=true&w=majority
