@@ -24,6 +24,7 @@ async function main (){
 //  console.log("Database connected");
  await mongoose.connect(process.env.MONGO_URL)
  console.log("Database connected");
+//  console.log("process.env.MONGO_URL" ,process.env.MONGO_URL);
 
 //  mongodb+srv://<username>:<password>@cluster0.fd65aqc.mongodb.net/?retryWrites=true&w=majority
 }
@@ -41,6 +42,6 @@ server.use("*" , (req, res) => {
 
 
 
-server.listen(8080 , () => {
-  console.log("listening on " + 8080);
+server.listen(process.env.PORT , () => {
+  console.log("listening on " + process.env.PORT);
 })

@@ -25,6 +25,7 @@ exports.createProduct = (req, res) => {
 // GET
 exports.getAllProducts = async (req, res) => {
  const product = await Product.find();
+ console.log("product" , product);
 //  let product = [
 //   {
 //     "id": 2,
