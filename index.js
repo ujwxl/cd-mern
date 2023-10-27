@@ -34,6 +34,7 @@ async function main (){
 server.use(cors());
 server.use(morgan("dev"))
 server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
+console.log(path.resolve(__dirname,process.env.PUBLIC_DIR) , "ssssssssssss");
 server.use('/products' , productRouter.router)
 server.use('/user' , usersRouter.router)
 server.use("*" , (req, res) => {
