@@ -2,10 +2,31 @@ const fs = require("fs");
 const model = require("../model/product");
 const mongoose = require('mongoose');
 const Product = model.Product;
+const ejs = require('ejs');
+const path = require('path');
 
 // const indexHTML = fs.readFileSync("index.html", "utf-8");
 // const data = JSON.parse(fs.readFileSync("data.json", "utf-8"));
 // const products = data.products;
+
+// V I E W
+exports.getAllProductsSSR = async (req, res) => {
+  const product = await Product.find();
+  ejs.renderFile(path.resolve(__dirname, '../pages/index.ejs'), {products:product},function(err , str){
+    res.send(str);
+  })
+  // console.log("product" , product);
+  //  res.status(200).json(product);
+ };
+
+ exports.getAddForm = async (req, res) => {
+  ejs.renderFile(path.resolve(__dirname, '../pages/add.ejs'),function(err , str){
+    res.send(str);
+  })
+  // console.log("product" , product);
+  //  res.status(200).json(product);
+ };
+
 
 // POST
 exports.createProduct = (req, res) => {

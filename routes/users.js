@@ -3,16 +3,16 @@ const usersController = require("../controller/user");
 const usersRouter = express.Router();
 
 // console.log(usersRouter);
-// console.log("usersController" ,usersController.getAllProducts);
+// console.log("usersController" ,usersController.getAllUsers);
 // console.log("usersController" ,usersController);
 
 // API - Endpoints -Routes
 usersRouter
-  .get("/", usersController.getAllProducts)
-  .get("/:id", usersController.getOneProduct)
-  .post("/", usersController.createProduct)
-  .put("/:id", usersController.replaceProduct)
-  .patch("/:id", usersController.updateProduct)
-  .delete("/:id", usersController.deleteProduct);
+  .get("/", usersController.getAllUsers)
+  .get("/:id", usersController.getOneUser)
+  .post("/", usersController.createUser)
+  .put("/:id", usersController.replaceUser)
+  .patch("/:id", usersController.updateUser)
+  .delete("/:id", usersController.deleteUser);
 
 exports.router = usersRouter;

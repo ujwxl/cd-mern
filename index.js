@@ -14,6 +14,7 @@ const usersRouter = require('./routes/users');
 
 // bodyParser
 server.use(express.json());
+server.use(express.urlencoded());
 
 // CONNECT to Mongoose
 main().catch((err)=> console.log(err , "ERROR"))
@@ -39,7 +40,7 @@ server.use(morgan("dev"))
 server.use(express.static(path.resolve(__dirname,process.env.PUBLIC_DIR)));
 console.log(path.resolve(__dirname,process.env.PUBLIC_DIR) , "ssssssssssss");
 server.use('/products' , productRouter.router)
-server.use('/user' , usersRouter.router)
+server.use('/users' , usersRouter.router)
 server.use("*" , (req, res) => {
   res.sendFile(path.resolve(__dirname , 'build' , 'index.html'))
 })

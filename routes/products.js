@@ -5,6 +5,8 @@ const productRouter = express.Router();
 
 // API - Endpoints -Routes
 productRouter.post("/" ,productController.createProduct )
+.get('/ssr',productController.getAllProductsSSR)
+.get('/add',productController.getAddForm)
 .get('/',productController.getAllProducts)
 .get('/:id',productController.getOneProduct)
 .put("/:id" , productController.replaceProduct)
