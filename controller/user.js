@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require('path');
 const model = require("../model/user");
+
 // const indexHTML = fs.readFileSync("index.html", "utf-8");
 // const data = JSON.parse(fs.readFileSync(path.resolve(__dirname,"../data.json"), "utf-8"));
 // const users = data.users;
@@ -8,19 +9,7 @@ const model = require("../model/user");
 const User = model.User;
 
 // POST
-exports.createUser = async (req, res) => {
-//   console.log(req.body);
-  const user = new User(req.body)
-  user
-    .save()
-    .then((doc) => {
-      console.log(doc, "Doc");
-      return res.status(201).json(doc);
-    })
-    .catch((err) => {
-      res.status(400).json(err);
-    });
-};
+
 // GET
 exports.getAllUsers = async (req, res) => {
   const users = new User.find();
